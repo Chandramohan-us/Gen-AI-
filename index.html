@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Accelerated Roadmap to Mastering Generative AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-item {
+            border: 2px solid #00C49A;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s;
+            flex: 1;
+            min-width: 200px;
+        }
+        .flowchart-item:hover {
+            transform: translateY(-5px);
+        }
+        .flowchart-arrow {
+            color: #FF6B6B;
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: none;
+        }
+        @media (min-width: 1024px) {
+            .flowchart-arrow {
+                display: block;
+            }
+        }
+        .stat-card {
+            background-color: #0088FE;
+            color: white;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-[#003f5c] mb-4">Your Accelerated Roadmap to Mastering Generative AI</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">A free, project-focused plan to quickly build real-world Generative AI skills, from foundational concepts to practical application.</p>
+        </header>
+
+        <main class="space-y-12">
+
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-center mb-6 text-[#003f5c]">The 4-Phase Learning Journey</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">This structured path takes you from absolute beginner to a capable practitioner. Each phase builds upon the last, emphasizing hands-on learning and free resources.</p>
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-4">
+                    <div class="flowchart-item">
+                        <div class="text-3xl font-bold text-[#0088FE]">1</div>
+                        <h3 class="font-bold text-lg mt-2">Foundational Skills</h3>
+                        <p class="text-sm text-gray-500 mt-1">Master Python, essential libraries (NumPy, Pandas), and grasp the core math concepts.</p>
+                    </div>
+                    <div class="flowchart-arrow">→</div>
+                    <div class="flowchart-item">
+                        <div class="text-3xl font-bold text-[#00C49A]">2</div>
+                        <h3 class="font-bold text-lg mt-2">Core AI & ML Concepts</h3>
+                        <p class="text-sm text-gray-500 mt-1">Understand supervised vs. unsupervised learning, neural networks, and deep learning.</p>
+                    </div>
+                     <div class="flowchart-arrow">→</div>
+                    <div class="flowchart-item">
+                         <div class="text-3xl font-bold text-[#FFBB28]">3</div>
+                        <h3 class="font-bold text-lg mt-2">GenAI Deep Dive</h3>
+                        <p class="text-sm text-gray-500 mt-1">Explore Transformers, LLMs, GANs, Prompt Engineering, and RAG.</p>
+                    </div>
+                     <div class="flowchart-arrow">→</div>
+                    <div class="flowchart-item">
+                         <div class="text-3xl font-bold text-[#FF8042]">4</div>
+                        <h3 class="font-bold text-lg mt-2">Build & Apply</h3>
+                        <p class="text-sm text-gray-500 mt-1">Create portfolio projects, contribute to open-source, and engage with the AI community.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-center mb-2 text-[#003f5c]">Foundational Effort Allocation</h2>
+                    <p class="text-center text-gray-600 mb-4 text-sm">Focus your initial energy on a strong programming base, as it's the primary tool for implementing AI theories. The first two phases are critical for long-term success.</p>
+                    <div class="chart-container">
+                        <canvas id="effortAllocationChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-center mb-2 text-[#003f5c]">Key GenAI Technique Relevance</h2>
+                     <p class="text-center text-gray-600 mb-4 text-sm">Prioritize learning based on industry impact. Transformers and advanced prompting are currently the most critical skills for building modern AI applications.</p>
+                    <div class="chart-container">
+                        <canvas id="techniqueRelevanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-center mb-2 text-[#003f5c]">Ideal Learning Resource Mix by Phase</h2>
+                <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">Your learning strategy should evolve. Start with structured courses, but quickly transition to hands-on projects to solidify your knowledge and build a portfolio.</p>
+                <div class="chart-container h-96 max-h-[450px]">
+                    <canvas id="resourceMixChart"></canvas>
+                </div>
+            </section>
+            
+            <section>
+                 <h2 class="text-2xl font-bold text-center mb-6 text-[#003f5c]">Free Real-World AI Applications to Use & Learn From</h2>
+                 <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Experiment with these powerful, free tools to understand what's possible with Generative AI and inspire your own projects. Many offer free tiers or credits to get started.</p>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3">💬</div>
+                        <h3 class="font-bold text-lg">Conversational AI</h3>
+                        <p class="text-sm text-gray-600">Tools like ChatGPT, Google Gemini, and Claude demonstrate advanced text generation, summarization, and problem-solving. Use them for prompt engineering practice.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3">🎨</div>
+                        <h3 class="font-bold text-lg">Image Generation</h3>
+                        <p class="text-sm text-gray-600">Platforms like Midjourney (free trials), Stable Diffusion (open-source), and Adobe Firefly (free tier) showcase text-to-image synthesis and editing capabilities.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3">💻</div>
+                        <h3 class="font-bold text-lg">Code Assistance</h3>
+                        <p class="text-sm text-gray-600">GitHub Copilot (free for students) and other free code generators accelerate development by suggesting code snippets, writing functions, and debugging.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3">📝</div>
+                        <h3 class="font-bold text-lg">Writing & Content Tools</h3>
+                        <p class="text-sm text-gray-600">Grammarly's AI features and Notion AI help with drafting, editing, and brainstorming, showing how AI can augment creative and professional writing tasks.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                         <div class="text-4xl mb-3">☁️</div>
+                        <h3 class="font-bold text-lg">AI Cloud Platforms</h3>
+                        <p class="text-sm text-gray-600">Google AI Studio and Microsoft Azure AI offer free tiers/credits to experiment with powerful models (like Gemini) and build your own applications via APIs.</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                         <div class="text-4xl mb-3">📚</div>
+                        <h3 class="font-bold text-lg">Research & Learning Aids</h3>
+                        <p class="text-sm text-gray-600">Tools like NotebookLM act as personalized AI assistants, helping you synthesize information from your own documents and notes to accelerate learning.</p>
+                    </div>
+                 </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-300">
+            <p class="text-gray-500">Infographic created to provide a structured, free, and actionable plan for learning Generative AI.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const vibrantPalette = {
+            blue: '#0088FE',
+            green: '#00C49A',
+            yellow: '#FFBB28',
+            orange: '#FF8042',
+            purple: '#AF1B3F',
+            darkBlue: '#003f5c'
+        };
+
+        function wrapLabel(label) {
+            const maxLength = 16;
+            if (typeof label === 'string' && label.length > maxLength) {
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                }
+                lines.push(currentLine.trim());
+                return lines;
+            }
+            return label;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+
+        const commonChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            family: 'Inter',
+                            size: 12
+                        },
+                         color: '#333'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    bodyFont: {
+                        family: 'Inter'
+                    },
+                    titleFont: {
+                        family: 'Inter'
+                    }
+                }
+            }
+        };
+
+        const effortCtx = document.getElementById('effortAllocationChart').getContext('2d');
+        new Chart(effortCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Phase 1: Foundations (40%)', 'Phase 2: Core AI/ML (60%)'],
+                datasets: [{
+                    label: 'Effort Allocation',
+                    data: [40, 60],
+                    backgroundColor: [vibrantPalette.blue, vibrantPalette.green],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4
+                }]
+            },
+            options: { ...commonChartOptions }
+        });
+
+        const techniqueCtx = document.getElementById('techniqueRelevanceChart').getContext('2d');
+        const techniqueLabels = [
+            'Transformers & LLMs', 
+            'Prompt Engineering', 
+            'Retrieval-Augmented Generation (RAG)', 
+            'GANs & Diffusion Models', 
+            'AI Ethics & Safety'
+        ];
+        new Chart(techniqueCtx, {
+            type: 'bar',
+            data: {
+                labels: techniqueLabels.map(wrapLabel),
+                datasets: [{
+                    label: 'Relevance Score',
+                    data: [95, 90, 85, 80, 75],
+                    backgroundColor: [
+                        vibrantPalette.blue, 
+                        vibrantPalette.green, 
+                        vibrantPalette.yellow, 
+                        vibrantPalette.orange,
+                        vibrantPalette.purple
+                    ],
+                    borderColor: 'rgba(255, 255, 255, 0)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#e0e0e0'
+                        },
+                        ticks: { color: '#333' }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: { color: '#333' }
+                    }
+                },
+                 plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        const resourceCtx = document.getElementById('resourceMixChart').getContext('2d');
+        new Chart(resourceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4'],
+                datasets: [
+                    {
+                        label: 'Online Courses',
+                        data: [60, 50, 40, 10],
+                        backgroundColor: vibrantPalette.blue,
+                    },
+                    {
+                        label: 'Practical Projects',
+                        data: [20, 30, 40, 70],
+                        backgroundColor: vibrantPalette.green,
+                    },
+                    {
+                        label: 'Reading Docs/Papers',
+                        data: [20, 20, 20, 20],
+                        backgroundColor: vibrantPalette.yellow,
+                    }
+                ]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: { color: '#333' }
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                         ticks: {
+                            callback: function(value) { return value + '%' },
+                            color: '#333'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
